@@ -5,7 +5,6 @@ import { Features } from "@/components/sections/features";
 import { SocialProof } from "@/components/sections/social-proof";
 import { BinForm } from "@/components/sections/bin-form";
 import { FinalCTA } from "@/components/sections/final-cta";
-import { LeafBackground } from "@/components/ui/leaf-background";
 import { Particles } from "@/components/ui/particles";
 import { SectionTransition } from "@/components/ui/section-transition";
 import { ServiceChecker } from "@/components/sections/service-checker";
@@ -16,7 +15,6 @@ export default function Home() {
       <Hero />
       {/* Leaf background covers all sections below hero */}
       <div className="relative bg-background transition-colors duration-500">
-        <LeafBackground />
         <Particles count={70} className="opacity-60 dark:opacity-80" />
         <SectionTransition>
           <Problem />

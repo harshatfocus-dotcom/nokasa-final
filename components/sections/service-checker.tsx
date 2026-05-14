@@ -99,18 +99,18 @@ export function ServiceChecker() {
             <div className="space-y-6">
               <motion.div 
                 initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20 text-[10px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400"
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-[10px] font-bold uppercase tracking-widest text-emerald-600 "
               >
                 <Locate className="w-3 h-3" />
                 <span>Service Readiness</span>
               </motion.div>
               
-              <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white leading-[1.1] tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+              <h2 className="text-4xl md:text-6xl font-black text-gray-900 leading-[1.1] tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
                 See if we're on <br />
                 <span className="text-emerald-500">your street.</span>
               </h2>
               
-              <p className="text-lg text-gray-500 dark:text-gray-400 font-medium max-w-md leading-relaxed">
+              <p className="text-lg text-gray-500 font-medium max-w-md leading-relaxed">
                 Nokasa is deploying logistics nodes across the city. Enter your pin to check if we're active in your neighborhood.
               </p>
             </div>
@@ -118,24 +118,24 @@ export function ServiceChecker() {
             <form onSubmit={checkCoverage} className="relative max-w-md w-full">
                <div className={cn(
                  "group relative flex items-center p-1 rounded-2xl border transition-all duration-500",
-                 status === "covered" ? "border-emerald-500 shadow-xl shadow-emerald-500/10" : "border-gray-200 dark:border-white/10 bg-gray-50/50 dark:bg-card/50"
+                 status === "covered" ? "border-emerald-500 shadow-xl shadow-emerald-500/10" : "border-gray-200 bg-gray-50/50 "
                )}>
                   <div className="pl-5 pr-3">
                      <Search className={cn("w-5 h-5 transition-colors duration-500", status === "covered" ? "text-emerald-500" : "text-gray-400")} />
                   </div>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     placeholder="Enter Pincode"
                     value={pincode}
                     onChange={(e) => {
                        setPincode(e.target.value.replace(/\D/g, "").slice(0, 6));
                        if (status !== "idle") setStatus("idle");
                     }}
-                    className="flex-1 bg-transparent py-4 text-lg font-bold focus:outline-none placeholder:text-gray-300 dark:placeholder:text-gray-700"
+                    className="flex-1 min-w-0 bg-transparent py-4 text-lg font-bold focus:outline-none placeholder:text-gray-300 :text-gray-700"
                   />
                   <button 
                     disabled={status === "checking" || pincode.length < 6}
-                    className="px-6 h-12 rounded-xl bg-gray-950 dark:bg-white text-white dark:text-gray-950 font-black text-xs uppercase tracking-widest flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-20 mr-1 shadow-lg"
+                    className="px-6 h-12 rounded-xl bg-gray-950 text-white font-black text-xs uppercase tracking-widest flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-20 mr-1 shadow-lg"
                   >
                     {status === "checking" ? "..." : "Check"}
                     <ArrowRight className="w-4 h-4" />
@@ -154,21 +154,21 @@ export function ServiceChecker() {
                            <CheckCircle2 className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <p className="font-bold text-gray-900 dark:text-white text-xl capitalize">{matchedArea.area} is covered!</p>
-                          <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Ready for your first circular pickup.</p>
+                          <p className="font-bold text-gray-900 text-xl capitalize">{matchedArea.area} is covered!</p>
+                          <p className="text-sm text-gray-500 font-medium">Ready for your first circular pickup.</p>
                         </div>
                       </div>
 
-                      <div className="space-y-4 pt-4 border-t border-gray-100 dark:border-white/5">
+                      <div className="space-y-4 pt-4 border-t border-gray-100 ">
                         <p className="text-xs font-bold text-gray-400 uppercase tracking-widest italic">Start your sustainable journey:</p>
                         <div className="flex flex-col sm:flex-row gap-4">
                            <a
                              href="https://apps.apple.com/in/app/nokasa-sell-your-old-clothes/id6745338136?l=hi"
                              target="_blank"
                              rel="noopener noreferrer"
-                             className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-black dark:bg-white text-white dark:text-black shadow-lg shadow-black/10 hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden group border border-white/10 dark:border-black/10"
+                             className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-black text-white shadow-lg shadow-black/10 hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden group border border-white/10 "
                            >
-                             <div className="absolute inset-0 bg-white/5 dark:bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                             <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" className="relative z-10">
                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.1 2.48-1.34.03-1.77-.79-3.29-.79-1.53 0-1.99.77-3.27.82-1.31.05-2.31-1.32-3.14-2.53C4.25 17.07 2.99 12.15 4.67 9.22c.84-1.45 2.31-2.36 3.91-2.38 1.21-.02 2.31.81 3.03.81.71 0 2.03-.99 3.44-.85 1.58.06 2.76.63 3.51 1.72-3.14 1.84-2.63 5.79.52 7.07a7.66 7.66 0 0 1-1.37 3.91zM14.95 5.15c.67-.81 1.11-1.94.99-3.07-1.01.04-2.13.66-2.85 1.5-.66.77-1.22 1.94-1.07 3.03 1.12.08 2.21-.61 2.93-1.46z" />
                              </svg>
@@ -182,9 +182,9 @@ export function ServiceChecker() {
                              href="https://play.google.com/store/apps/details?id=co.nokasa.user.nokasa_user"
                              target="_blank"
                              rel="noopener noreferrer"
-                             className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-black dark:bg-white text-white dark:text-black shadow-lg shadow-black/10 hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden group border border-white/10 dark:border-black/10"
+                             className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-black text-white shadow-lg shadow-black/10 hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden group border border-white/10 "
                            >
-                             <div className="absolute inset-0 bg-white/5 dark:bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                             <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" className="relative z-10">
                                <path d="M3.609 2.029C3.385 2.254 3.25 2.593 3.25 3.011v17.978c0 .418.135.757.359.982l.065.065L13.75 11.961v-.218L3.674 1.964l-.065.065zM17.144 15.352l-3.394-3.394v-.218l3.394-3.394.076.044 3.996 2.27c1.139.646 1.139 1.708 0 2.355l-3.996 2.27-.076.047zM17.144 15.352l-3.394-3.394v-.218l3.394-3.394.076.044 3.996 2.27c1.139.646 1.139 1.708 0 2.355l-3.996 2.27-.076.047zM13.75 11.743L3.674 1.964c.32-.32.846-.356 1.458-.008l12.012 6.824-3.47 3.47v.218zM13.75 12.257v-.218l3.47 3.47-12.012 6.824c-.612.348-1.138.312-1.458-.008l10.076-10.072.065-.214z" />
                              </svg>
@@ -203,16 +203,16 @@ export function ServiceChecker() {
                       initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
                       className="mt-8 flex items-start gap-4"
                     >
-                      <div className="w-10 h-10 rounded-full bg-gray-100 dark:bg-white/5 flex items-center justify-center shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
                          <XCircle className="w-6 h-6 text-gray-400" />
                       </div>
                       <div className="space-y-2">
-                         <p className="font-bold text-gray-900 dark:text-white text-xl capitalize">Coming to {pincode} soon!</p>
-                         <p className="text-sm text-gray-500 dark:text-gray-400 font-medium leading-relaxed">
+                         <p className="font-bold text-gray-900 text-xl capitalize">Coming to {pincode} soon!</p>
+                         <p className="text-sm text-gray-500 font-medium leading-relaxed">
                            We're expanding our logistics network rapidly. Your area is currently on our priority map for the next phase. 
                          </p>
                          <div className="pt-4">
-                            <span className="px-3 py-1 rounded-full bg-gray-100 dark:bg-white/5 text-[10px] font-black text-gray-400 uppercase tracking-widest border border-gray-200 dark:border-white/10">Follow for updates</span>
+                            <span className="px-3 py-1 rounded-full bg-gray-100 text-[10px] font-black text-gray-400 uppercase tracking-widest border border-gray-200 ">Follow for updates</span>
                          </div>
                       </div>
                     </motion.div>
@@ -221,7 +221,7 @@ export function ServiceChecker() {
             </form>
           </div>
 
-          <div className="relative w-full aspect-square rounded-[3rem] overflow-hidden bg-gray-50/50 dark:bg-card/50 border-2 border-gray-100 dark:border-white/5 shadow-2xl flex items-center justify-center">
+          <div className="relative w-full aspect-square rounded-[3rem] overflow-hidden bg-gray-50/50 border-2 border-gray-100 shadow-2xl flex items-center justify-center">
               <AnimatePresence mode="wait">
                  {status !== "covered" ? (
                    <motion.div 

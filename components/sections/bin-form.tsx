@@ -123,7 +123,7 @@ export function BinForm() {
                   <p className="text-sm text-red-500">Something went wrong. Please try again or email us at support@nokasa.co.</p>
                 )}
 
-                <div className="pt-2">
+                <div className="pt-2 flex justify-center">
                   <button
                     type="submit"
                     disabled={status === "loading"}

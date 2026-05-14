@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/container";
 import { Recycle, Package, Shirt, Truck, Leaf, ShoppingBag, Sparkles, Apple, Play } from "lucide-react";
 import { Magnetic } from "@/components/ui/magnetic";
 
-const WORDS = ["make space.", "create impact.", "earn rewards."];
+const WORDS = ["make impact", "make space", "earn rewards"];
 
 const LOCALITIES = [
   "Indiranagar",
@@ -18,6 +18,16 @@ const LOCALITIES = [
   "Malleshwaram",
   "Bellandur",
   "Marathahalli",
+  "Rajajinagar",
+  "Basavanagudi",
+  "JP Nagar",
+  "Electronic City",
+  "Bannerghatta Road",
+  "Sarjapur Road",
+  "Yelahanka",
+  "BTM Layout",
+  "Hebbal",
+  "Kalyan Nagar",
 ];
 
 const DOT = (
@@ -122,10 +132,10 @@ export function Hero() {
     return () => clearInterval(id);
   }, []);
 
-  const allLocalities = [...LOCALITIES, ...LOCALITIES]; // doubled for seamless loop
+
 
   return (
-    <section className="relative overflow-hidden bg-background min-h-[90vh] flex flex-col justify-center pt-20 lg:pt-28 pb-12 lg:pb-16 transition-colors duration-500">
+    <section className="relative overflow-hidden bg-background md:min-h-[90vh] flex flex-col justify-center pt-20 lg:pt-28 pb-4 md:pb-12 lg:pb-16 transition-colors duration-500">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-grid opacity-[0.8] dark:opacity-[0.65] mask-image-gradient-b z-0 pointer-events-none transition-opacity duration-500" style={{ WebkitMaskImage: 'linear-gradient(to bottom, black 40%, transparent 100%)' }} />
 
@@ -158,7 +168,7 @@ export function Hero() {
               {/* Eyebrow */}
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/60 dark:bg-white/5 backdrop-blur-md border border-brand/20 text-xs font-semibold text-brand dark:text-brand-light tracking-wide mb-6 shadow-sm hover:shadow-md transition-all">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" />
-                Responsible Clothing Recycling
+                Give Your Clothes a Second Life
               </div>
 
 
@@ -204,8 +214,7 @@ export function Hero() {
 
               {/* Sub */}
               <p className="text-lg text-gray-500 dark:text-gray-400 max-w-[480px] mx-auto leading-relaxed mb-8">
-                NoKasa connects households with responsible recycling and resale
-                networks with a convenient doorstep pickup.
+                NoKasa takes your closet cleanout and turns it into a second life for every garment, with one doorstep pickup.
               </p>
 
               {/* CTA */}
@@ -266,12 +275,18 @@ export function Hero() {
         {/* Marquee */}
         <div className="relative overflow-hidden flex items-center pt-2">
           {/* Fade masks */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
-          <div className="flex animate-marquee">
-            {allLocalities.map((city, i) => (
-              <CityItem key={`${city}-${i}`} city={city} />
+          {/* Two identical strips side-by-side for seamless loop */}
+          <div className="flex shrink-0 animate-marquee" aria-hidden="false">
+            {LOCALITIES.map((city, i) => (
+              <CityItem key={`a-${city}-${i}`} city={city} />
+            ))}
+          </div>
+          <div className="flex shrink-0 animate-marquee" aria-hidden="true">
+            {LOCALITIES.map((city, i) => (
+              <CityItem key={`b-${city}-${i}`} city={city} />
             ))}
           </div>
         </div>

@@ -105,17 +105,17 @@ export default function BecomePartnerPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
-              className="flex flex-wrap items-center justify-center gap-4 pt-6"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6"
             >
-              <a 
-                href="#partner-form" 
-                className="px-8 py-4 rounded-2xl bg-gray-950 text-white dark:bg-white dark:text-gray-950 font-bold text-lg shadow-xl shadow-black/10 dark:shadow-white/10 hover:scale-105 transition-all flex items-center gap-2"
+              <a
+                href="#partner-form"
+                className="w-[260px] px-8 py-4 rounded-2xl bg-gray-950 text-white dark:bg-white dark:text-gray-950 font-bold text-lg shadow-xl shadow-black/10 dark:shadow-white/10 hover:scale-105 transition-all flex items-center justify-center gap-2"
               >
                 Apply Now <ArrowRight className="w-5 h-5 text-white dark:text-gray-950" />
               </a>
-              <a 
-                href="#calculator" 
-                className="px-8 py-4 rounded-2xl bg-white dark:bg-card border-2 border-gray-950 dark:border-white text-gray-950 dark:text-white font-bold text-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-all"
+              <a
+                href="#calculator"
+                className="w-[260px] px-8 py-4 rounded-2xl bg-white dark:bg-card border-2 border-gray-950 dark:border-white text-gray-950 dark:text-white font-bold text-lg hover:bg-gray-50 dark:hover:bg-white/5 transition-all flex items-center justify-center"
               >
                 Earnings Calculator
               </a>
@@ -282,7 +282,7 @@ export default function BecomePartnerPage() {
 
             {/* Right: Form */}
             <div className="space-y-10">
-              <div className="space-y-4">
+              <div className="space-y-4 text-center lg:text-left">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-950 dark:text-gray-100 tracking-tighter">Become a Partner</h2>
                 <p className="text-gray-500 font-medium">Tell us about yourself and our team will get in touch with you.</p>
               </div>

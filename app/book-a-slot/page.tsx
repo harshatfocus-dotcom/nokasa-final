@@ -151,6 +151,7 @@ export default function BookASlotPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="text-center lg:text-left"
             >
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/8 dark:bg-brand/10 border border-brand/15 text-[11px] font-bold text-brand uppercase tracking-widest mb-6 shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" />
@@ -164,10 +165,10 @@ export default function BookASlotPage() {
                 <span className="text-brand">clothing pickup</span><br />
                 today.
               </h1>
-              <p className="text-[17px] md:text-[19px] text-gray-500 dark:text-gray-400 font-medium leading-[1.6] mb-8 max-w-lg">
+              <p className="text-[17px] md:text-[19px] text-gray-500 dark:text-gray-400 font-medium leading-[1.6] mb-8 max-w-lg mx-auto lg:mx-0">
                 Scan the QR code to download the NoKasa app and schedule your first pickup in under 30 seconds.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 items-start">
+              <div className="flex flex-col sm:flex-row gap-4 items-center lg:items-start">
                 <a
                   href="https://play.google.com/store"
                   target="_blank"

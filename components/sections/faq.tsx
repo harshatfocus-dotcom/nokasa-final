@@ -12,7 +12,7 @@ const FAQS = [
   },
   {
     q: "How are rewards calculated?",
-    a: "Rewards are calculated at ₹20 per kg. A one-time pickup charge of ₹50 applies per slot. Our agent weighs everything on the spot and pays you instantly.",
+    a: "Rewards are calculated at ₹20 per kg for wearable, resaleable items only. Items accepted for recycling do not earn any rewards. A one-time pickup charge of ₹50 applies per slot. Our agent weighs and evaluates everything on the spot.",
   },
   {
     q: "How long does pickup take to arrive?",
