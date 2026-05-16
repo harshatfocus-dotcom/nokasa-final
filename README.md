@@ -5,7 +5,7 @@ NoKasa connects households with responsible recycling and resale networks with a
 ## 🚀 Live Demo
 
 Check out the live deployment on Vercel:
-**[https://nokasa.vercel.app](https://nokasa.vercel.app)**
+**[https://nokasav2.vercel.app](https://nokasav2.vercel.app)**
 
 ## ✨ Key Features
 
