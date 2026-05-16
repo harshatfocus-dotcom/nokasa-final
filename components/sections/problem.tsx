@@ -17,7 +17,7 @@ export function Problem() {
   const inView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section className="py-20 md:py-32 bg-transparent relative overflow-hidden min-h-[95vh] flex items-center transition-colors duration-500" id="problem">
+    <section className="pt-6 pb-20 md:pt-8 md:pb-32 bg-transparent relative overflow-hidden min-h-[95vh] flex items-center transition-colors duration-500" id="problem">
 
 
 
